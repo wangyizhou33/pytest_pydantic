@@ -6,7 +6,7 @@ import pytest
 from blog.models import Article
 
 
-@pytest.fixture()
+@pytest.fixture(autouse=True)
 def database():
     _, file_name = tempfile.mkstemp()
     os.environ["DATABASE_NAME"] = file_name
